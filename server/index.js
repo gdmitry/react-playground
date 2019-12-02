@@ -35,6 +35,10 @@ app.get('*.js', (req, res, next) => {
   next();
 });
 
+// Setup Mongo
+const setupGraphQL = require('./db');
+setupGraphQL(app);
+
 // Start your app.
 app.listen(port, host, async err => {
   if (err) {
