@@ -1,0 +1,31 @@
+schema {
+  query: RootQuery
+}
+
+type Gym {
+  id: ID
+  name: String
+}
+
+"""Root Query"""
+type RootQuery {
+  allTrainers: [Trainer]
+  allGyms: [Gym]
+}
+
+enum Specialty {
+  Water
+  Gym
+  Boxing
+  Spa
+  Fight
+  Bath
+}
+
+type Trainer {
+  id: ID
+  name: String
+  specialty: Specialty
+  gymId: ID
+  gym: Gym
+}

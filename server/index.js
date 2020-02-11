@@ -4,7 +4,7 @@ const express = require('express');
 const logger = require('./logger');
 
 const argv = require('./argv');
-const port = require('./port');
+const { port } = require('./config');
 const setup = require('./middlewares/frontendMiddleware');
 const isDev = process.env.NODE_ENV !== 'production';
 const ngrok =
@@ -36,7 +36,7 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Setup Mongo
-const setupGraphQL = require('./db');
+const setupGraphQL = require('./configureDB');
 setupGraphQL(app);
 
 // Start your app.
