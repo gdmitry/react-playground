@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const assert = require('assert');
 const graphqlHTTP = require('express-graphql');
-const { schema } = require('./data/schema.graphql');
+const { schema } = require('./data/schema.js');
 const { dbName, MONGO_URL } = require('./config');
 
 const setupGraphQL = app =>
